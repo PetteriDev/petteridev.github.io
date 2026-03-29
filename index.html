@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petteri Olli</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    background: #fff;
+    color: #1a1a1a;
+    line-height: 1.6;
+  }
+  h1 { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+  .subtitle { color: #555; font-size: 15px; margin-bottom: 6px; }
+  .contact { font-size: 14px; color: #777; margin-bottom: 48px; }
+  .contact a { color: #1a5c6e; text-decoration: none; }
+  .contact a:hover { text-decoration: underline; }
+
+  h2 {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+  }
+
+  section { margin-bottom: 48px; }
+
+  .item { margin-bottom: 32px; }
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .item-title { font-size: 15px; font-weight: 600; }
+  .item-meta { font-size: 13px; color: #999; white-space: nowrap; }
+  .item-org { font-size: 14px; color: #555; margin-bottom: 6px; }
+  .item p { font-size: 14px; color: #555; margin-bottom: 6px; }
+  .item p:last-child { margin-bottom: 0; }
+
+  .skills-list { font-size: 14px; color: #555; }
+  .skills-list span { display: inline-block; margin-right: 4px; }
+  .skills-list span::after { content: "·"; margin-left: 4px; color: #bbb; }
+  .skills-list span:last-child::after { content: ""; }
+
+  a { color: #1a5c6e; }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<h1>Petteri Olli</h1>
+<p class="subtitle">Technology &amp; Customer Operations</p>
+<p class="contact">
+  petteri.olli99@gmail.com &nbsp;&middot;&nbsp; +358 40 7469828 &nbsp;&middot;&nbsp;
+  <a href="https://github.com/PetteriDev" target="_blank">github.com/PetteriDev</a>
+</p>
+
+<section>
+  <h2>Work experience</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-title">Service Customer Agent</span>
+      <span class="item-meta">2024 &ndash; present</span>
+    </div>
+    <div class="item-org">Vestas Finland Oy</div>
+    <p>Primary contact between wind farm owners and internal service teams. Reporting on turbine performance, co-leading customer meetings, and coordinating technical issue resolution with engineering.</p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-title">Customer Support Specialist Trainee</span>
+      <span class="item-meta">2022 &ndash; 2024</span>
+    </div>
+    <div class="item-org">ABB Oy &ndash; Motors and Generators</div>
+    <p>Handled customer inquiries on order changes, cancellations, and technical questions regarding ordered electric motors.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-title">MSc in Technology &ndash; AI in Customer Support</span>
+      <span class="item-meta">2024</span>
+    </div>
+    <div class="item-org">University of Vaasa &ndash; in collaboration with ABB</div>
+    <p>Research investigating how AI can enhance customer support operations. Combined theoretical frameworks with a pilot implementation in Azure AI Studio, evaluating AI effectiveness across support ticket categories and identifying optimal training data strategies.</p>
+    <p><a href="https://urn.fi/URN:NBN:fi-fe2024082967215" target="_blank">Read thesis &rarr;</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-title">BSc in Technology &ndash; SAP ERP Regression Testing Optimization</span>
+      <span class="item-meta">2023</span>
+    </div>
+    <div class="item-org">University of Vaasa &ndash; in collaboration with ABB</div>
+    <p>Analyzed ABB&rsquo;s SAP ERP regression testing pipeline within a DevOps environment and proposed concrete process improvements to increase testing efficiency and reduce manual overhead.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Projects</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-title">Turbine Services &ndash; Automated Morning Report</span>
+      <span class="item-meta">2025</span>
+    </div>
+    <p>Customers are informed each morning about that day&rsquo;s planned service operations via a report sent by the management team. This was previously done manually, taking around 30 minutes per person each day. I built a script using Playwright to scrape the relevant service data from Salesforce and turbine status data from SCADA, navigating pages and waiting for dynamic content to load before extracting the data and compiling it into the final report.</p>
+    <p>Estimated time saved: ~960 hours/year (8 persons &times; 30 min &times; 20 days &times; 12 months)</p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-title">Power Automate Flow &ndash; Service Schedule Updates</span>
+      <span class="item-meta">2025</span>
+    </div>
+    <p>In wind turbine service operations, dispatchers post work additions and cancellations to a Microsoft Teams channel, after which the management team would manually forward each update to customers. Delays in these notifications directly impact customers&rsquo; ability to report accurate production figures to Fingrid. To fix this, I built a Power Automate flow with the following logic:</p>
+    <p>[When a new channel message is added] &rarr; [Send Email V2]</p>
+    <p>The flow triggers automatically whenever a new message is posted to the Teams channel and sends the update to customers instantly &mdash; removing the manual step entirely. Estimated time saved: ~640 hours/year (8 persons &times; 10 updates &times; 2 min &times; 20 days &times; 12 months).</p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-title">Generator Rental Comparison Tool</span>
+      <span class="item-meta">2025</span>
+    </div>
+    <p>During grid outages, wind turbine blades cannot be yawed (nacelle turned) towards the wind. If the wind blows from the wrong angle, blades can start to vibrate and become damaged. I built a price and specification comparison site pulling data from Cramo and Ramirent websites, making it easier for technicians to find and rent the right generator to power the yaw motors.</p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-title">User Authentication System</span>
+      <span class="item-meta">2023</span>
+    </div>
+    <p>Built to develop my full-stack skills. The site lets users create an account and log in with email and password, with credentials validated against a database. Built using the MEAN stack (MongoDB, Express, AngularJS, Node.js).</p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-title">Spotify Trending Artists Tracker</span>
+      <span class="item-meta">2023</span>
+    </div>
+    <p>Built a website using the public Spotify API that tracked which artists were trending on Spotify.</p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-title">Reddit Stock Mentions Tracker</span>
+      <span class="item-meta">2021</span>
+    </div>
+    <p>Tracked r/WallStreetBets (3.7M members) to gather data on which stocks were mentioned most frequently, with the goal of identifying potential market advantages.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="skills-list">
+    <span>Python</span>
+    <span>JavaScript</span>
+    <span>HTML/CSS</span>
+    <span>Java</span>
+    <span>SQL</span>
+    <span>Azure AI Studio</span>
+    <span>Power Automate</span>
+    <span>Playwright</span>
+    <span>MEAN stack</span>
+    <span>Salesforce</span>
+    <span>SAP</span>
+    <span>Office 365</span>
+    <span>Finnish (native)</span>
+    <span>English (excellent)</span>
+    <span>Swedish (satisfactory)</span>
+  </div>
+</section>
+
+</body>
+</html>
