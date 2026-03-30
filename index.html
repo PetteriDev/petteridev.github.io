@@ -48,10 +48,37 @@
   .item p { font-size: 14px; color: #555; margin-bottom: 6px; }
   .item p:last-child { margin-bottom: 0; }
 
+  /* Skills */
   .skills-list { font-size: 14px; color: #555; }
-  .skills-list span { display: inline-block; margin-right: 4px; }
-  .skills-list span::after { content: "·"; margin-left: 4px; color: #bbb; }
-  .skills-list span:last-child::after { content: ""; }
+
+  .skill-category {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .skill-category:last-child { margin-bottom: 0; }
+
+  .skill-label {
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 13px;
+    min-width: 150px;
+    flex-shrink: 0;
+  }
+
+  .skill-category span:not(.skill-label) {
+    display: inline-block;
+  }
+  .skill-category span:not(.skill-label)::after {
+    content: "·";
+    margin-left: 6px;
+    color: #bbb;
+  }
+  .skill-category span:not(.skill-label):last-child::after {
+    content: "";
+  }
 
   a { color: #1a5c6e; }
   a:hover { text-decoration: underline; }
@@ -84,7 +111,7 @@
       <span class="item-meta">2025</span>
     </div>
     <p>In wind turbine service operations, dispatchers post work additions and cancellations to a Microsoft Teams channel, after which the management team would manually forward each update to customers. Delays in these notifications directly impact customers&rsquo; ability to report accurate production figures to Fingrid. To fix this, I built a Power Automate flow with the following logic:</p>
-    <p>The flow triggers automatically whenever a new message is posted to the Teams channel and sends the update to customers instantly, removing the manual step entirely. </p>
+    <p>The flow triggers automatically whenever a new message is posted to the Teams channel and sends the update to customers instantly, removing the manual step entirely.</p>
     <p>Time saving potential: ~640 hours/year (8 persons &times; 10 updates &times; 2 min &times; 20 days &times; 12 months).</p>
   </div>
 
@@ -124,21 +151,47 @@
 <section>
   <h2>Skills</h2>
   <div class="skills-list">
-    <span>Python</span>
-    <span>JavaScript</span>
-    <span>HTML/CSS</span>
-    <span>Java</span>
-    <span>SQL</span>
-    <span>Azure AI Studio</span>
-    <span>Power Automate</span>
-    <span>Playwright</span>
-    <span>MEAN stack</span>
-    <span>Salesforce</span>
-    <span>SAP</span>
-    <span>Office 365</span>
-    <span>Finnish (native)</span>
-    <span>English (excellent)</span>
-    <span>Swedish (satisfactory)</span>
+    <div class="skill-category">
+      <span class="skill-label">AI & Automation</span>
+      <span>Azure AI Studio</span>
+      <span>Power Automate</span>
+      <span>Playwright</span>
+    </div>
+    <div class="skill-category">
+      <span class="skill-label">Development</span>
+      <span>Python</span>
+      <span>JavaScript</span>
+      <span>Java</span>
+      <span>HTML/CSS</span>
+      <span>MEAN stack</span>
+    </div>
+    <div class="skill-category">
+      <span class="skill-label">Databases</span>
+      <span>MySQL</span>
+      <span>PostgreSQL</span>
+      <span>MongoDB</span>
+    </div>
+    <div class="skill-category">
+      <span class="skill-label">Cloud & Deployment</span>
+      <span>AWS</span>
+      <span>DigitalOcean</span>
+      <span>Railway</span>
+      <span>Heroku</span>
+      <span>DevOps</span>
+    </div>
+    <div class="skill-category">
+      <span class="skill-label">Enterprise Tools</span>
+      <span>Salesforce</span>
+      <span>SAP</span>
+      <span>OMS</span>
+      <span>Office 365</span>
+    </div>
+    <div class="skill-category">
+      <span class="skill-label">Languages</span>
+      <span>Finnish (native)</span>
+      <span>English (excellent)</span>
+      <span>Swedish (satisfactory)</span>
+    </div>
   </div>
 </section>
 
